@@ -1,9 +1,9 @@
-package services;
+package com.coursemongodb.workshopmongo.services;
 
-import entities.User;
+import com.coursemongodb.workshopmongo.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.coursemongodb.workshopmongo.repositories.UserRepository;
 import org.springframework.stereotype.Service;
-import repositories.UserRepository;
 
 import java.util.List;
 

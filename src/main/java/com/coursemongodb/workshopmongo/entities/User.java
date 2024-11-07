@@ -1,4 +1,4 @@
-package entities;
+package com.coursemongodb.workshopmongo.entities;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,7 +16,8 @@ public class User implements Serializable {
     private String name;
     private String email;
 
-    public User() {}
+    public User() {
+    }
 
     public User(Long id, String name, String email) {
         this.id = id;

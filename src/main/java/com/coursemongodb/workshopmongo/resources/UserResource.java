@@ -1,12 +1,12 @@
-package resources;
+package com.coursemongodb.workshopmongo.resources;
 
-import entities.User;
+import com.coursemongodb.workshopmongo.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import services.UserService;
+import com.coursemongodb.workshopmongo.services.UserService;
 
 import java.util.List;
 
