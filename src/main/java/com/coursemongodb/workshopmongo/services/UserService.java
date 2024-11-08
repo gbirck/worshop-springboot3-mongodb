@@ -23,8 +23,7 @@ public class UserService {
         User user = repo.findById(id).get();
         if (user == null) {
             throw new ObjectNotFoundException("Objeto nao encontrado!");
-        }
-        else {
+        } else {
             return user;
         }
     }
