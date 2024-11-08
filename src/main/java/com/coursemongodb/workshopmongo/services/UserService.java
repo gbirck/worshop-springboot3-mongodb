@@ -1,5 +1,6 @@
 package com.coursemongodb.workshopmongo.services;
 
+import com.coursemongodb.workshopmongo.DTO.UserDTO;
 import com.coursemongodb.workshopmongo.entities.User;
 import com.coursemongodb.workshopmongo.services.exceptions.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,5 +27,13 @@ public class UserService {
         else {
             return user;
         }
+    }
+
+    public User insert(User user) {
+        return repo.insert(user);
+    }
+
+    public User fromDTO(UserDTO userDTO) {
+        return new User(userDTO.getId(), userDTO.getName(), userDTO.getEmail());
     }
 }
