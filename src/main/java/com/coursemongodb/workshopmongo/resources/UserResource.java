@@ -4,7 +4,6 @@ import com.coursemongodb.workshopmongo.DTO.UserDTO;
 import com.coursemongodb.workshopmongo.entities.Post;
 import com.coursemongodb.workshopmongo.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.repository.Update;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.coursemongodb.workshopmongo.services.UserService;

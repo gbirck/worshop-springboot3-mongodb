@@ -1,20 +1,14 @@
 package com.coursemongodb.workshopmongo.resources;
 
-import com.coursemongodb.workshopmongo.DTO.UserDTO;
 import com.coursemongodb.workshopmongo.entities.Post;
-import com.coursemongodb.workshopmongo.entities.User;
 import com.coursemongodb.workshopmongo.resources.util.URL;
 import com.coursemongodb.workshopmongo.services.PostService;
-import com.coursemongodb.workshopmongo.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import java.net.URI;
 import java.util.Date;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(value = "/posts")

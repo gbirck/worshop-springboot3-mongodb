@@ -1,7 +1,5 @@
 package com.coursemongodb.workshopmongo.DTO;
 
-import com.coursemongodb.workshopmongo.entities.User;
-
 import java.io.Serializable;
 import java.util.Date;
 
