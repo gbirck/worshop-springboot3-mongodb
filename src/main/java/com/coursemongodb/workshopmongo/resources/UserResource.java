@@ -3,6 +3,7 @@ package com.coursemongodb.workshopmongo.resources;
 import com.coursemongodb.workshopmongo.DTO.UserDTO;
 import com.coursemongodb.workshopmongo.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.repository.Update;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.coursemongodb.workshopmongo.services.UserService;
@@ -34,16 +35,24 @@ public class UserResource {
 
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody UserDTO dto) {
-        User user = service.fromDTO(dto);
-        user = service.insert(user);
+        User obj = service.fromDTO(dto);
+        service.insert(obj);
 
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(user.getId()).toUri();
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Void> update(@RequestBody UserDTO dto, @PathVariable String id) {
+        User obj = service.fromDTO(dto);
+        obj.setId(id);
+        service.update(obj);
         return ResponseEntity.noContent().build();
     }
 }
